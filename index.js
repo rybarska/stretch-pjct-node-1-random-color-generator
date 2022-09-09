@@ -6,10 +6,6 @@ const color = randomColor({
   hue: process.argv[2],
 });
 
-if (process.argv[2] === 'ask') {
-  console.log('What color? What luminosity?');
-}
-
 const filler = '#';
 const emptySpace = ' ';
 let length = 31;
@@ -17,35 +13,39 @@ if (process.argv[4] > 31) {
   length = process.argv[4];
 }
 
-console.log(kuler(filler.repeat(length), color));
-console.log(kuler(filler.repeat(length), color));
-console.log(kuler(filler.repeat(length), color));
-console.log(
-  kuler(
-    filler.repeat((length - 21) / 2) +
-      emptySpace.repeat(21) +
-      filler.repeat((length - 21) / 2),
-    color,
-  ),
-);
-console.log(
-  kuler(
-    filler.repeat((length - 21) / 2) +
-      emptySpace.repeat(7) +
-      color +
-      emptySpace.repeat(7) +
-      filler.repeat((length - 21) / 2),
-    color,
-  ),
-);
-console.log(
-  kuler(
-    filler.repeat((length - 21) / 2) +
-      emptySpace.repeat(21) +
-      filler.repeat((length - 21) / 2),
-    color,
-  ),
-);
-console.log(kuler(filler.repeat(length), color));
-console.log(kuler(filler.repeat(length), color));
-console.log(kuler(filler.repeat(length), color));
+if (process.argv[2] === 'ask') {
+  console.log('What color? What luminosity?');
+} else {
+  console.log(kuler(filler.repeat(length), color));
+  console.log(kuler(filler.repeat(length), color));
+  console.log(kuler(filler.repeat(length), color));
+  console.log(
+    kuler(
+      filler.repeat((length - 21) / 2) +
+        emptySpace.repeat(21) +
+        filler.repeat((length - 21) / 2),
+      color,
+    ),
+  );
+  console.log(
+    kuler(
+      filler.repeat((length - 21) / 2) +
+        emptySpace.repeat(7) +
+        color +
+        emptySpace.repeat(7) +
+        filler.repeat((length - 21) / 2),
+      color,
+    ),
+  );
+  console.log(
+    kuler(
+      filler.repeat((length - 21) / 2) +
+        emptySpace.repeat(21) +
+        filler.repeat((length - 21) / 2),
+      color,
+    ),
+  );
+  console.log(kuler(filler.repeat(length), color));
+  console.log(kuler(filler.repeat(length), color));
+  console.log(kuler(filler.repeat(length), color));
+}
