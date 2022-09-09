@@ -9,16 +9,22 @@ const color = randomColor({
 const filler = '#';
 const emptySpace = ' ';
 let length = 31;
-if (process.argv[4] > 31) {
+let height = 9;
+
+if (process.argv[4]) {
   length = process.argv[4];
+}
+
+if (process.argv[5]) {
+  height = process.argv[5];
 }
 
 if (process.argv[2] === 'ask') {
   console.log('What color? What luminosity?');
 } else {
-  console.log(kuler(filler.repeat(length), color));
-  console.log(kuler(filler.repeat(length), color));
-  console.log(kuler(filler.repeat(length), color));
+  for (let i = 0; i < (height - 3) / 2; i++) {
+    console.log(kuler(filler.repeat(length), color));
+  }
   console.log(
     kuler(
       filler.repeat((length - 21) / 2) +
@@ -45,7 +51,7 @@ if (process.argv[2] === 'ask') {
       color,
     ),
   );
-  console.log(kuler(filler.repeat(length), color));
-  console.log(kuler(filler.repeat(length), color));
-  console.log(kuler(filler.repeat(length), color));
+  for (let i = 0; i < (height - 3) / 2; i++) {
+    console.log(kuler(filler.repeat(length), color));
+  }
 }
