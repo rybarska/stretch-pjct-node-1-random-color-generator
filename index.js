@@ -7,7 +7,7 @@ const color = randomColor({
 });
 
 if (process.argv[2] === 'ask') {
-  console.log('What is the color? What is the luminosity');
+  console.log('What color? What luminosity?');
 }
 
 const filler = '#';
