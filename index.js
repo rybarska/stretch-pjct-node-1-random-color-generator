@@ -6,10 +6,16 @@ const color = randomColor({
   hue: process.argv[2],
 });
 
+if (process.argv[2] === 'ask') {
+  console.log('What is the color? What is the luminosity');
+}
+
 const filler = '#';
 const emptySpace = ' ';
 let length = 31;
-if (process.argv[4] > 31) length = process.argv[4];
+if (process.argv[4] > 31) {
+  length = process.argv[4];
+}
 
 console.log(kuler(filler.repeat(length), color));
 console.log(kuler(filler.repeat(length), color));
